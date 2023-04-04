@@ -24,6 +24,7 @@ function CountriesPage() {
             population: countryData.population,
           };
         });
+        console.log(res.data);
         setCountries(loadedCountries);
         setIsLoading(false);
       })
