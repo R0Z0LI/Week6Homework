@@ -6,19 +6,18 @@ function CountryListFilter(props) {
     props.selected(event.target.value);
   };
   return (
-    <div>
+    <div className="p-5 pl-7 pr-7 flex justify-between">
       <div>
         <input
           tpye="text"
           placeholder="Search.."
-          className="searchBar"
+          className="py-2 pl-8 pr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           onChange={onChangeHandler}
         />
       </div>
       <div>
-        <label>Filter by Region</label>
         <select onChange={dropdownChangerHandler} value={props.value}>
-          <option value="">All</option>
+          <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>
           <option value="Americas">America</option>
           <option value="Asia">Asia</option>

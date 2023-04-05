@@ -48,25 +48,6 @@ function CountriesPage() {
     setRegion(selectedRegion);
   };
 
-  /*let filteredData = [];
-  const filter = () => {
-    filteredData = countries.filter((country) => {
-      if (region === "All") {
-        return country.region;
-      }
-      if (!region) {
-        return true;
-      }
-      return country.region === region;
-    });
-
-    filteredData = countries.filter((item) =>
-      item.name.toLowerCase().includes(filteredCountries)
-    );
-  };
-
-  filter();*/
-
   const filteredData = countries.filter((country) => {
     if (
       filteredCountries &&
