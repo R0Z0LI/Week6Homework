@@ -1,15 +1,30 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function CountryDetails(props) {
   const languages = Object.values(props.items[0].languages);
   const currencies = Object.keys(props.items[0].currencies);
   const border = Object.values(props.items[0].neighbours);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const onClickHandler = (item) => {
     navigate(`/${item}`, { replace: true });
     window.location.reload();
   };
+
+  useEffect(() => {
+    const handleBackButton = (event) => {
+      event.preventDefault();
+      navigate(-1);
+    };
+
+    window.addEventListener("popstate", handleBackButton);
+
+    return () => {
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, [navigate]);
 
   return (
     <div>
