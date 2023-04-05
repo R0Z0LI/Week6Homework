@@ -12,7 +12,6 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <CountriesPage /> },
       { path: ":countryId", element: <CountryPage /> },
-      { path: ":countryId/:country3Id", element: <CountryPage /> },
     ],
   },
 ]);

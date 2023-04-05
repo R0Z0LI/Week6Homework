@@ -61,7 +61,9 @@ function CountryPage() {
 
   return (
     <div>
-      <button onClick={backClickHandler}>Go back</button>
+      <button onClick={backClickHandler} className="p-3 shadow-lg m-5">
+        Go back
+      </button>
       {!isLoading && country.length > 0 && <CountryDetails items={country} />}
       {!isLoading && country.length === 0 && <p>Found no cities. </p>}
       {isLoading && <p>Loading...</p>}
