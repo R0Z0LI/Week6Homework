@@ -16,7 +16,7 @@ function CountriesPage() {
       .then((res) => {
         const loadedCountries = res.data.map((countryData) => {
           return {
-            id: countryData.cca2,
+            id: countryData.cca3,
             flag: countryData.flags.png,
             name: countryData.name.common,
             capital: countryData.capital,

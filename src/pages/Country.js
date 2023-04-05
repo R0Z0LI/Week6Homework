@@ -10,7 +10,11 @@ function CountryPage() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const location = useLocation().pathname;
+  let location = useLocation().pathname;
+  if (location.length > 4) {
+    location = location.slice(4, 8);
+    console.log(baseURL + location);
+  }
   const fetchCountryHandler = useCallback(() => {
     setIsLoading(true);
     axios
