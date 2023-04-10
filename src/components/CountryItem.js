@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 function CountryItem(props) {
   return (
-    <li className="m-4 w-1/5 shadow">
+    <li className="lg:m-4 lg:w-1/5 shadow rounded-md flex justify-start m-3">
       <Link to={props.id}>
-        <img src={props.flag} className="w-1/1 h-48" />
+        <img src={props.flag} className="lg:w-1/1 lg:h-48 rounded-md" />
         <div className="p-3">
           <h3 className="font-bold text-lg">{props.name}</h3>
           <div className="pt-3 text-xs">

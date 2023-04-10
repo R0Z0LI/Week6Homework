@@ -6,7 +6,7 @@ function CountryListFilter(props) {
     props.selected(event.target.value);
   };
   return (
-    <div className="p-5 pl-7 pr-7 flex justify-between">
+    <div className="p-5 pl-7 pr-7 flex justify-between flex-wrap">
       <div>
         <input
           tpye="text"
@@ -15,7 +15,7 @@ function CountryListFilter(props) {
           onChange={onChangeHandler}
         />
       </div>
-      <div>
+      <div className="pt-4 sm:pt-0">
         <select onChange={dropdownChangerHandler} value={props.value}>
           <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>

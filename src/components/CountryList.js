@@ -3,7 +3,7 @@ import React from "react";
 
 function CountryList(props) {
   return (
-    <ul className="flex flex-wrap justify-between p-3">
+    <ul className="flex flex-wrap justify-center lg:p-3">
       {props.items.map((countries) => (
         <CountryItem
           key={countries.id}
