@@ -45,11 +45,9 @@ function CountryDetails(props) {
       <div className="lg:basis-9/12 lg:p-7 pt-4 lg:pl-20">
         <h2 className="text-4xl font-bold pb-5">{props.items[0].name}</h2>
         <div className="lg:flex lg:flex-col lg:flex-wrap flex-flex-row pt-8 text-sm pb-8 lg:h-64">
-          <p className="pb-4">
+          <p className="pb-4 w-1/2">
             <span>Native Name: </span>
-            <span className="break-all text-slate-500">
-              {nativeName[0].official}
-            </span>
+            <span className=" text-slate-500">{nativeName[0].official}</span>
           </p>
           <p className="pb-4">
             <span>Population: </span>
@@ -75,10 +73,10 @@ function CountryDetails(props) {
           </p>
           <div>
             <div className="flex flex-row">
-              <span className="pb-4 pr-2">Currencies: </span>
+              <span className="pb-4 pr-1">Currencies: </span>
               <ul className="flex flex-row flex-wrap">
                 {currencies.map((item, index) => (
-                  <li key={index} className="mr-2 pb-4 text-slate-500">
+                  <li key={index} className="mr-1 pb-4 text-slate-500">
                     {item.name}
                     {index !== currencies.length - 1 && ","}
                   </li>
@@ -99,15 +97,17 @@ function CountryDetails(props) {
           </div>
         </div>
         {borderExist && (
-          <div className="lg:flex lg:flex-row ">
-            <span className="pt-2">Border Countries: </span>
+          <div className="lg:flex lg:flex-row lg:align-top">
+            <span className="">Border Countries: </span>
             <ul className="flex flex-row">
               {border.map((item, index) => (
                 <li
                   key={index}
-                  className="mr-2 p-1 pt-2 border shadow text-center w-12 h-8 text-xs"
+                  className="mr-2 p-1 flex justify-center content-center border shadow text-center w-12 h-8 text-xs"
                 >
-                  <Link onClick={() => onClickHandler(item)}>{item} </Link>
+                  <Link className="pt-px" onClick={() => onClickHandler(item)}>
+                    {item}{" "}
+                  </Link>
                 </li>
               ))}
             </ul>
